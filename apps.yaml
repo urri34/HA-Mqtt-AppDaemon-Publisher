@@ -1,0 +1,4 @@
+---
+geeksend:
+  module: geeksend
+  class: GeekSend
