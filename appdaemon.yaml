@@ -8,14 +8,14 @@ appdaemon:
       type: hass
     MQTT:
       type: mqtt
-      namespace: mqtt # needed
+      namespace: mqtt
       verbose: True
       client_host: core-mosquitto
       client_port: 1883
       client_id: localad
       client_user: mqtt
       client_password: mqtt
-      event_name: GEEK_SEND_EVENT # the event you will listen in your module
+      event_name: GEEK_SEND_EVENT
       client_topics: NONE
 http:
   url: http://127.0.0.1:5050
