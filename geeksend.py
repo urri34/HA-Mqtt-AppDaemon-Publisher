@@ -29,8 +29,16 @@ class GeekSend(hass.Hass):
 
     def GeekSendReceivedEvent(self, event_name, data, kwargs):
         self.log("GeekSend: GEEK_SEND_EVENT wake up geek_send_received_event()")
+        self.log("GeekSend: event_name value="+str(event_name))
+        self.log("GeekSend: data value="+str(data))
+        self.log("GeekSend: kwargs value="+str(kwargs))
         MessageDict = {
-            'Element': 'WifiSolar',
-            'Status': randint(0, 2)
+            'Element': 'empty',
+            'Status': 'none'
         }
+        for Parameter in data:
+            if Parameter == 'Element':
+                MessageDict['Element']=data['Element']
+            if Parameter == 'Status':
+                MessageDict['Status']=data['Status']
         SendMqttMessage(self, MessageDict)
