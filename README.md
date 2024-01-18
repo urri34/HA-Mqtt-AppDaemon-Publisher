@@ -30,9 +30,22 @@ The name of the file without the .py extension
 The name of the class you have defined inside the geeksend.py file
 
 ## geeksend.py
+
+Get info from the event GEEK_SEND_EVENT called from HAServer and publish it in the Mqtt server. This is the json type we send:
+
 ```sh
-python .\publish.py
-[2024-01-17 08:02:19,918] DEBUG    publish.py   main(): Logging active for me: publish.py
+MessageDict = {
+    'Element': 'WifiSolar',
+    'Status': '0'
+}
 ```
 
-![Figure1](Figure_1.png)
+## Calling events from HAServer with parameters
+
+Call the service from the HAServer with the parameters in the yaml format:
+
+![EventAppDaeomon.PNG](EventAppDaeomon.png)
+
+See it appearing in the Mqtt broker
+
+![EventInMqtt.PNG](EventInMqtt.png)
